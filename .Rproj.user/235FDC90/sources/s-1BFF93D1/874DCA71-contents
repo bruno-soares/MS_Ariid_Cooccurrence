@@ -1,0 +1,60 @@
+library(vegan)
+library(ggplot2)
+library(ape)
+library(cluster)
+
+### índices para indivíduos com todos os dados completos ###
+eco=read.table("ecomorfol4.txt",header=T,row.names=1)[,-8]
+eco[,1:8]=decostand(eco[,c(1:8)],method="standardize")
+pcoa<-cmdscale(daisy(eco,metric="gower"))
+scores<-as.data.frame(pcoa(daisy(eco,metric="gower"))$vectors)
+pcoa(daisy(eco,metric="gower"))$values
+efit<-envfit(pcoa,eco, permutations = 999, na.rm = TRUE)
+efit2<-as.data.frame(efit$vectors$arrows*sqrt(efit$vectors$r))
+efit2<-rbind(efit2,efit$factors$centroids*sqrt(efit$factors$r))
+efit
+
+ggplot()+
+  geom_point(mapping=aes(x=scores$Axis.1,y=scores$Axis.2))+
+  geom_text(mapping=aes(x=scores$Axis.1,y=scores$Axis.2,label=rownames(scores)))+
+  geom_segment(data=efit2,aes(x=0,xend=efit2[,1]/2.5,y=0,yend=efit2[,2]/2.5),
+               arrow = arrow(length = unit(0.5, "cm")),colour="grey",inherit.aes=FALSE)+
+  geom_text(data=efit2,aes(x=efit2[,1]/2.5,y=efit2[,2]/2.5,label=row.names(efit2)),size=4)+
+  coord_fixed()
+#Obs: não sei se gosto das setas no gráfico. Acho que prefiro colocar duas setas fora
+# do gráfico e a descrição dos índices
+
+
+### clustering ###
+dis<- daisy(eco,metric="gower")
+clusMS<- hclust(dis, "single")
+clusMC<- hclust(dis, "complete")
+clusMA<- hclust(dis, "average")
+clusMW<- hclust(dis, "ward.D")
+clusMQ<- hclust(dis, "mcquitty")
+clusMM<- hclust(dis, "median")
+clusMCE<- hclust(dis, "centroid")
+plot(clusMA)
+list_clusters<-list(clusMS,clusMC,clusMA,clusMW,clusMQ,clusMM,clusMCE) 
+lapply(list_clusters,function(x) cor(dis,cophenetic(x))) #clusMA
+sil_width <- c(NA)
+for(i in 2:10){
+  pam_fit <- pam(dis,
+                 diss = TRUE,
+                 k = i)
+  sil_width[i] <- pam_fit$silinfo$avg.width
+}
+plot(1:10, sil_width,xlab = "Number of clusters",ylab = "Silhouette Width")
+lines(1:10, sil_width)
+grpALLM <- cutree(clusMW,6) # exibe uma lista indicando qual espécie pertence a qual grupo
+grpALLM
+
+
+### mantel total, Estrato ###
+grupos=read.table("grupos.txt",header=T,row.names=1)
+grupos
+eco
+adonis(dis~grupos$Salinidade)
+adonis(dis~grupos$Habitat)
+adonis(dis~grupos$Estrato)
+adonis(dis~grupos$Diet)
