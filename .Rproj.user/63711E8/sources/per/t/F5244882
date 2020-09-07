@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1599508476017.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "132413120",
+    "id" : "F5244882",
+    "lastKnownWriteTime" : 1599509449,
+    "last_content_update" : 1599509449995,
+    "path" : "C:/Users/Aquarium/OneDrive/Atual/Artigos em andamento/ariidae/Final coding/Ariid_Cooccurrence/04 Calculating pairwise C-scores.R",
+    "project_path" : "04 Calculating pairwise C-scores.R",
+    "properties" : {
+        "cursorPosition" : "13,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

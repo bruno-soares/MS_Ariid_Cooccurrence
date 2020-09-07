@@ -80,5 +80,26 @@ pc.env<-princomp(decostand(env,method="standardize"),cor=TRUE)
 eigenvals(pc.env) #Selecting first axis by Kaiser-Guttman criterion
 summary(pc.env) #First axis explains 53.4% of total variation
 pc.env$loadings #Depth and salinity are positively related to the first PC
+scores<-pc.env$scores
+loadings<-as.data.frame(pc.env$loadings[c(1:3),])
+write.table(scores,"env_pcs.txt")
 
 # Plotting PCA #
+Suppl.Fig2<-ggplot()+
+  geom_point(mapping=aes(x=scores[,1],y=scores[,2]),size=2,alpha=0.15)+
+  xlab("PC1 (53.41%)")+  ylab("PC2 (32.93%)")+
+  geom_segment(aes(x=0,xend=loadings[,1]*2,y=0,yend=loadings[,2]*2),
+               arrow = arrow(length = unit(0.5, "cm")),colour="blue",
+               size=0.8,alpha=0.5,inherit.aes=FALSE)+
+  geom_text(aes(x=(loadings[,1]*2+0.3),y=(loadings[,2]*2+0.16),label=c("Depth","Salinity","Temperature")),
+            size=4,color="blue",fontface="bold",alpha=0.5)+
+  theme(panel.background = element_rect(fill = "white", colour = "black", size = 0.5), # opcoes graficas
+        panel.grid.major = element_line(colour = NA),
+        panel.grid.minor = element_line(colour = NA),
+        axis.text = element_text(colour = "black", size = 12),
+        axis.title = element_text(colour = "black", size = 14, face = "bold"),
+        legend.title = element_blank(),
+        legend.background = element_rect(fill = "white"),
+        legend.text = element_text(face = "bold", colour = "black", size = 10))
+
+ggsave("Suppl. Fig. 2.png",Suppl.Fig2,dpi=600,height=10,width=10,units=c("cm"))

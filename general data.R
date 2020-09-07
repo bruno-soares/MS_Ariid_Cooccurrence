@@ -1,16 +1,3 @@
-### Pacotes utilizados ###
-library(reshape)
-library(vegan)
-library(ade4)
-library(Rmisc)
-
-### Dados brutos e construção das planilhas ###
-data<-read.table("database.txt",header=T)
-comm<-cast(data[,c(1:3)],trawl~species,value='pres',fun.aggregate=mean)
-comm[is.na(comm)]<-0
-row.names(comm)<-comm$trawl
-comm<-comm[,-1]
-
 ### Reading function: Pairwise C-score ###
 ## Format required: a plots (rows) x species (columns) matrix of presences/absences
 ## The function c.score calculates the C-score matrix to detect species association, for the whole community and for species pairs
@@ -168,7 +155,7 @@ ecospat.Cscore01 <- function(data.in,npermut,outpath)
 
 ### C-score para os nossos dados ###
 data.in <- comm
-nperm <- 10000
+nperm <- 100
 outpath <- getwd()
 res <- ecospat.Cscore01(comm,nperm,outpath)
 print(res)
