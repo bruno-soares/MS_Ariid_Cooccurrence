@@ -5,21 +5,21 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "761295793",
+    "hash" : "0",
     "id" : "4742E3D2",
-    "lastKnownWriteTime" : 1599517235,
-    "last_content_update" : 1599517235467,
+    "lastKnownWriteTime" : 1599523716,
+    "last_content_update" : 1599523716671,
     "path" : "C:/Users/soare/OneDrive/Atual/Artigos em andamento/ariidae/Final coding/Ariid_Cooccurrence/06 Blois framework.R",
     "project_path" : "06 Blois framework.R",
     "properties" : {
-        "cursorPosition" : "72,38",
-        "scrollLine" : "64",
+        "cursorPosition" : "115,38",
+        "scrollLine" : "103",
         "tempName" : "Untitled1"
     },
     "read_only" : false,
     "read_only_alternatives" : [
     ],
-    "relative_order" : 4,
+    "relative_order" : 2,
     "source_on_save" : false,
     "source_window" : "",
     "type" : "r_source"
