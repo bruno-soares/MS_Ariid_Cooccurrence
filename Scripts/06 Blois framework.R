@@ -12,7 +12,7 @@ presabs<-cast(data[,c(1:3)],trawl~species,value='pres',fun.aggregate=mean)
 presabs[is.na(presabs)]<-0
 colnames(presabs)[1]<-"plot"
 
-sign.BayesM<-read.table("sign.BayesM.txt",header=T)
+sign.BayesM<-read.table("results/sign.BayesM.txt",header=T)
 pairs<-sign.BayesM[,c(1:2)]
 pairs<-cbind(pairs,ifelse((sign.BayesM$obs.C.score-sign.BayesM$exp.C.score)>0,"SEGR","AGGR"))
 colnames(pairs)[3]<-"NullModel"
@@ -21,11 +21,11 @@ coor<-aggregate(data[,5:6],list(data$trawl),mean)
 row.names(coor)<-coor$Group.1
 colnames(coor)[1]<-"plot"
 
-Dist<-read.table("avDist.txt",header=T,row.names=1)
+Dist<-read.table("results/avDist.txt",header=T,row.names=1)
 Dist<-cbind(Dist,coor$plot)
 colnames(Dist)[2]<-"plot"
 
-env<-read.table("env_pcs.txt",header=T)
+env<-read.table("results/env_pcs.txt",header=T)
 env<-cbind(env,coor$plot)
 colnames(env)[4]<-"plot"
 
@@ -120,7 +120,7 @@ for (i in 1:nrow(pairs)) {
 } 
 
 pairs
-write.table(pairs, "ResultBlois.txt", sep = "\t")
+write.table(pairs,"results/ResultBlois.txt", sep = "\t")
 
 
 ### Plotting Figure 4 ###

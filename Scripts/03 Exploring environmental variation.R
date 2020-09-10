@@ -82,7 +82,7 @@ summary(pc.env) #First axis explains 53.4% of total variation
 pc.env$loadings #Depth and salinity are positively related to the first PC
 scores<-pc.env$scores
 loadings<-as.data.frame(pc.env$loadings[c(1:3),])
-write.table(scores,"env_pcs.txt")
+write.table(scores,"results/env_pcs.txt")
 
 # Plotting PCA #
 Suppl.Fig2<-ggplot()+

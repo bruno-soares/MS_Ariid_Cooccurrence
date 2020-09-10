@@ -5,13 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "583219740",
+    "hash" : "0",
     "id" : "9BDBB8B8",
-    "lastKnownWriteTime" : 1599515555,
-    "last_content_update" : 1599515555,
+    "lastKnownWriteTime" : 1599747759,
+    "last_content_update" : 1599747759785,
     "path" : "C:/Users/soare/OneDrive/Atual/Artigos em andamento/ariidae/MS_Ariid_Cooccurrence/Scripts/05 Bayesian approach to identify significant C-scores.R",
     "project_path" : "Scripts/05 Bayesian approach to identify significant C-scores.R",
     "properties" : {
+        "cursorPosition" : "85,55",
+        "scrollLine" : "78"
     },
     "read_only" : false,
     "read_only_alternatives" : [

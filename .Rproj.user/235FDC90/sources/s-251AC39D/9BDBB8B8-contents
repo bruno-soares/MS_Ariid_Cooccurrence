@@ -2,11 +2,11 @@
 # This script was retrieved from D'Amen et al. (2017). If you use it, cite:
 # D'Amen, Gotelli & Guisan (2017) Disentangling biotic interactions, environmental filters, and dispersal limitation as drivers of species co-occurrence. Ecography, 41 (8): 1233-1244. ##
 nperm <- 10000
-outpath <- getwd()
-coocc.tab.all<-read.table("Cscores01.txt",h=T)
+outpath <- "C:/Users/soare/OneDrive/Atual/Artigos em andamento/ariidae/MS_Ariid_Cooccurrence/results"
+coocc.tab.all<-read.table("results/Cscores01.txt",h=T)
 obs.r<-data.frame(coocc.tab.all$obs.C.score) # Observed C-scores
 pairs<-coocc.tab.all[,1:2] # Names of significant pairs
-CooccProb<-read.table("MatrixPermutations01.txt", h=T)  # Null C-scores
+CooccProb<-read.table("results/MatrixPermutations01.txt", h=T)  # Null C-scores
 CooccProb.pairs<-cbind(pairs,CooccProb) # Attribute names of pairs to Null values
 CooccProb.pairs.mean<-apply(CooccProb.pairs[,3:nperm],1,mean) # Calculate mean of null values
 CooccProb.pairs.sd<-apply(CooccProb.pairs[,3:nperm],1,sd) # Calculate standard deviation of null values
@@ -93,4 +93,4 @@ for(j in 1:n.bin){
 ### Retain only pairs statistically significant in an individual test ###
 BayesM_merge<-merge(tab.finalBayesM,coocc.tab.all,by.y=c("Sp1","Sp2"))              
 sign.BayesM<-BayesM_merge[which(BayesM_merge$pval_less<0.05|BayesM_merge$pval_greater<0.05),]
-write.table(sign.BayesM,"Sign.BayesM.txt", sep="\t")
+write.table(sign.BayesM,"results/Sign.BayesM.txt", sep="\t")

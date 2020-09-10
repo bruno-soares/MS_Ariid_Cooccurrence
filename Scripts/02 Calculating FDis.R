@@ -9,7 +9,7 @@ comm[is.na(comm)]<-0
 row.names(comm)<-comm$trawl
 comm<-comm[,-1]
 
-eco<-read.table("ecomorphological data.txt",header=T,row.names=1)
+eco<-read.table("data/ecomorphological data.txt",header=T,row.names=1)
 colnames(comm)<-rownames(eco)
 comm<-as.data.frame(comm)
 
@@ -20,4 +20,4 @@ distinct<-data.frame(divfunc$Di)
 distinct[is.na(distinct)]<-0
 avdist<-as.data.frame(apply(distinct,1,function(x) mean(x)))
 colnames(avdist)[1]<-"AvDist"
-write.table(avdist,file="avDist.txt")
+write.table(avdist,file="results/avDist.txt")

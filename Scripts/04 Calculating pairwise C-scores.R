@@ -159,6 +159,6 @@ ecospat.Cscore01 <- function(data.in,npermut,outpath){
 ### Calculating C-Score ###
 data.in <- comm
 nperm <- 10000
-outpath <- getwd()
+outpath <- "C:/Users/soare/OneDrive/Atual/Artigos em andamento/ariidae/MS_Ariid_Cooccurrence/results"
 res <- ecospat.Cscore01(comm,nperm,outpath)
 print(res)
