@@ -7,7 +7,7 @@ library(ggplot2)
 library(gridExtra)
 
 #### Loading and formatting dataset ###
-data<-read.table("trawling data.txt",header=T)
+data<-read.table("data/trawling data.txt",header=T)
 presabs<-cast(data[,c(1:3)],trawl~species,value='pres',fun.aggregate=mean)
 presabs[is.na(presabs)]<-0
 colnames(presabs)[1]<-"plot"

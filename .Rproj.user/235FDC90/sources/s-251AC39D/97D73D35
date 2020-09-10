@@ -5,13 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "2706719047",
+    "hash" : "3552663801",
     "id" : "97D73D35",
-    "lastKnownWriteTime" : 1599343033,
-    "last_content_update" : 1599343033,
+    "lastKnownWriteTime" : 1599746376,
+    "last_content_update" : 1599746376219,
     "path" : "C:/Users/soare/OneDrive/Atual/Artigos em andamento/ariidae/MS_Ariid_Cooccurrence/Scripts/02 Calculating FDis.R",
     "project_path" : "Scripts/02 Calculating FDis.R",
     "properties" : {
+        "cursorPosition" : "5,23",
+        "scrollLine" : "3"
     },
     "read_only" : false,
     "read_only_alternatives" : [

@@ -5,13 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "389540153",
+    "hash" : "2227068204",
     "id" : "754EF40C",
-    "lastKnownWriteTime" : 1599512735,
-    "last_content_update" : 1599512735,
+    "lastKnownWriteTime" : 1599746394,
+    "last_content_update" : 1599746394917,
     "path" : "C:/Users/soare/OneDrive/Atual/Artigos em andamento/ariidae/MS_Ariid_Cooccurrence/Scripts/04 Calculating pairwise C-scores.R",
     "project_path" : "Scripts/04 Calculating pairwise C-scores.R",
     "properties" : {
+        "cursorPosition" : "7,23",
+        "scrollLine" : "0"
     },
     "read_only" : false,
     "read_only_alternatives" : [

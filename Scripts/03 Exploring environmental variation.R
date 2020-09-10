@@ -5,7 +5,7 @@ library(reshape)
 library(vegan)
 
 # Importing the dataset #
-trawlings<-read.table("trawling data.txt",header=T)
+trawlings<-read.table("data/trawling data.txt",header=T)
 
 # Renaming species for further plotting #
 levels(trawlings$species)[1]<-"Aph"

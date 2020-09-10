@@ -5,7 +5,7 @@ library(ggplot2)
 library(gridExtra)
 
 # Importing the dataset #
-eco<-read.table("ecomorphological data.txt",header=T,row.names=1)
+eco<-read.table("data/ecomorphological data.txt",header=T,row.names=1)
 
 # Generating the PCoA #
 pcoa<-cmdscale(daisy(eco,metric="gower"),k=ncol(eco)-1,eig=TRUE,add=TRUE)
