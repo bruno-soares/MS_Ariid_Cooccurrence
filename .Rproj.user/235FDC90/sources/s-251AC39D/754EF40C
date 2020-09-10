@@ -1,24 +1,22 @@
 {
     "collab_server" : "",
     "contents" : "",
-    "created" : 1599523662447.000,
+    "created" : 1599746075936.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
     "hash" : "389540153",
-    "id" : "92BD0E90",
+    "id" : "754EF40C",
     "lastKnownWriteTime" : 1599512735,
     "last_content_update" : 1599512735,
-    "path" : "C:/Users/soare/OneDrive/Atual/Artigos em andamento/ariidae/Final coding/Ariid_Cooccurrence/04 Calculating pairwise C-scores.R",
-    "project_path" : "04 Calculating pairwise C-scores.R",
+    "path" : "C:/Users/soare/OneDrive/Atual/Artigos em andamento/ariidae/MS_Ariid_Cooccurrence/Scripts/04 Calculating pairwise C-scores.R",
+    "project_path" : "Scripts/04 Calculating pairwise C-scores.R",
     "properties" : {
-        "cursorPosition" : "129,29",
-        "scrollLine" : "113"
     },
     "read_only" : false,
     "read_only_alternatives" : [
     ],
-    "relative_order" : 5,
+    "relative_order" : 4,
     "source_on_save" : false,
     "source_window" : "",
     "type" : "r_source"
