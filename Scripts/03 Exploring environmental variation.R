@@ -25,10 +25,11 @@ anova(lm(log(trawlings$temp)~trawlings$species)) # non-significant p-value
 
 # Plotting Figure 3 #
 Depth<-ggplot()+
-  geom_boxplot(aes(x=trawlings$species,y=log(trawlings$prof)),
+  geom_boxplot(aes(x=trawlings$species,y=trawlings$prof),
                notch=TRUE,fill="grey")+
   xlab("Species")+
-  ylab("Log of Depth (m)")+
+  ylab("Depth (m)")+
+  scale_y_log10(limits = c(5,60))+
   theme(panel.background = element_rect(fill = "white", colour = "black", size = 0.5), # opcoes graficas
         panel.grid.major = element_line(colour = NA),
         panel.grid.minor = element_line(colour = NA),
@@ -43,7 +44,7 @@ Depth<-ggplot()+
 Salinity<-ggplot()+
   geom_boxplot(aes(x=trawlings$species,y=trawlings$sal),
                notch=TRUE,fill="grey")+
-  ylab("Salinity (?)")+
+  ylab("Salinity")+
   theme(panel.background = element_rect(fill = "white", colour = "black", size = 0.5), # opcoes graficas
         panel.grid.major = element_line(colour = NA),
         panel.grid.minor = element_line(colour = NA),
