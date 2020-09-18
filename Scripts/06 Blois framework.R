@@ -45,6 +45,8 @@ pairs$env.test<-NA
 pairs$r.env.test<-NA
 pairs$Dist.test<-NA
 pairs$r.Dist.test<-NA
+pairs$Dist.A<-NA
+pairs$Dist.B<-NA
 pairs$season.test<-NA
 pairs$dry.season.test<-NA
 pairs$wet.season.test<-NA
@@ -90,9 +92,10 @@ for (i in 1:nrow(pairs)) {
   xx=as.matrix(Dist.tab1[,2])
   anova.Dist<-aov(xx~fac1)
   sum.Dist<-summary(anova.Dist)
-  boxplot(xx~fac1)
   pairs$Dist.test[i]<-sum.Dist[[1]][[1,"Pr(>F)"]]
   pairs$r.Dist.test[i]<-summary(lm(xx~fac1))$r.squared
+  pairs$Dist.A[i]<-coef(anova.Dist)[1]
+  pairs$Dist.B[i]<-coef(anova.Dist)[2]
   
   #### Test of environmental filter: ANOVA on the PCA axes
   env.tab1<-merge(env,tab1, by.y="plot",all = FALSE) 
@@ -107,10 +110,11 @@ for (i in 1:nrow(pairs)) {
   #### Test of seasonality: chi-square tests
   season.tab1<-merge(season,tab,by.y="plot",all = FALSE)
   season.tab1$id<-as.factor(season.tab1$id)
+  season.tab1<-season.tab1[!season.tab1$id=="co00",]
   levels(season.tab1$id)[levels(season.tab1$id)=="co10"] <- "SEGR"
   levels(season.tab1$id)[levels(season.tab1$id)=="co01"] <- "SEGR"
   levels(season.tab1$id)[levels(season.tab1$id)=="co11"] <- "AGGR"
-  levels(season.tab1$id)[levels(season.tab1$id)=="co00"] <- "AGGR"
+  season.tab1<-droplevels(season.tab1)
   fac1=season.tab1$id
   yy<-season.tab1$x
   m.season<-chisq.test(table(fac1,yy))
