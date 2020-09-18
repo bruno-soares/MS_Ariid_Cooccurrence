@@ -6,6 +6,8 @@ library(gridExtra)
 
 # Importing the dataset #
 eco<-read.table("data/ecomorphological data.txt",header=T,row.names=1)
+eco[,c(1:6)]<-decostand(eco[,c(1:6)],method="range")
+eco$ST<-as.factor(eco$ST)
 
 # Generating the PCoA #
 pcoa<-cmdscale(daisy(eco,metric="gower"),k=ncol(eco)-1,eig=TRUE,add=TRUE)
