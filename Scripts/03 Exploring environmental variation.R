@@ -103,4 +103,4 @@ Suppl.Fig2<-ggplot()+
         legend.background = element_rect(fill = "white"),
         legend.text = element_text(face = "bold", colour = "black", size = 10))
 
-ggsave("Suppl. Fig. 2.png",Suppl.Fig2,dpi=600,height=10,width=10,units=c("cm"))
+ggsave("results/Suppl. Fig. 2.png",Suppl.Fig2,dpi=600,height=10,width=10,units=c("cm"))
