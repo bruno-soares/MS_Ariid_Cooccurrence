@@ -142,7 +142,7 @@ Dist.tab0<-droplevels(Dist.tab0[!Dist.tab0$id=='co10',])
 
 AquSpa<-ggplot()+
   geom_boxplot(aes(x=Dist.tab0$id,y=Dist.tab0$AvDist),fill="grey")+
-  ylab("FDis")+
+  ylab(expression("D"[i]))+
   xlab("")+
   theme(panel.background = element_rect(fill = "white", colour = "black", size = 0.5), # opcoes graficas
         panel.grid.major = element_line(colour = NA),

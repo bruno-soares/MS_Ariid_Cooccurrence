@@ -85,22 +85,17 @@ scores<-pc.env$scores
 loadings<-as.data.frame(pc.env$loadings[c(1:3),])
 write.table(scores,"results/env_pcs.txt")
 
-# Plotting PCA #
-Suppl.Fig2<-ggplot()+
-  geom_point(mapping=aes(x=scores[,1],y=scores[,2]),size=2,alpha=0.15)+
-  xlab("PC1 (53.41%)")+  ylab("PC2 (32.93%)")+
-  geom_segment(aes(x=0,xend=loadings[,1]*2,y=0,yend=loadings[,2]*2),
-               arrow = arrow(length = unit(0.5, "cm")),colour="blue",
-               size=0.8,alpha=0.5,inherit.aes=FALSE)+
-  geom_text(aes(x=(loadings[,1]*2+0.3),y=(loadings[,2]*2+0.16),label=c("Depth","Salinity","Temperature")),
-            size=4,color="blue",fontface="bold",alpha=0.5)+
-  theme(panel.background = element_rect(fill = "white", colour = "black", size = 0.5), # opcoes graficas
-        panel.grid.major = element_line(colour = NA),
-        panel.grid.minor = element_line(colour = NA),
-        axis.text = element_text(colour = "black", size = 12),
-        axis.title = element_text(colour = "black", size = 14, face = "bold"),
-        legend.title = element_blank(),
-        legend.background = element_rect(fill = "white"),
-        legend.text = element_text(face = "bold", colour = "black", size = 10))
 
-ggsave("results/Suppl. Fig. 2.png",Suppl.Fig2,dpi=600,height=10,width=10,units=c("cm"))
+# Is environment spatially constrained? #
+# PCA for environmental variables #
+env<-aggregate(trawlings[,c(6,5,7:9)],list(trawlings$trawl),mean)
+row.names(env)<-env$Group.1
+env<-env[,-1]
+
+library(geosphere)
+distlin<-distm(env[,1:2])/1000
+library(vegan)
+rd<-rda(decostand(env,method="standardize")~distlin)
+plot(rd)
+mantel(distlin,vegdist(decostand(env,method="standardize"),method="euclidean"))
+adonis(vegdist(decostand(env,method="standardize"),method="euclidean")~distlin)
