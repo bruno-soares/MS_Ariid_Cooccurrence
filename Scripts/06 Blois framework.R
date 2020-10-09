@@ -95,7 +95,7 @@ for (i in 1:nrow(pairs)) {
   pairs$Dist.test[i]<-sum.Dist[[1]][[1,"Pr(>F)"]]
   pairs$r.Dist.test[i]<-summary(lm(xx~fac1))$r.squared
   pairs$Dist.A[i]<-coef(anova.Dist)[1]
-  pairs$Dist.B[i]<-coef(anova.Dist)[2]
+  pairs$Dist.B[i]<-coef(anova.Dist)[1]+coef(anova.Dist)[2]
   
   #### Test of environmental filter: ANOVA on the PCA axes
   env.tab1<-merge(env,tab1, by.y="plot",all = FALSE) 

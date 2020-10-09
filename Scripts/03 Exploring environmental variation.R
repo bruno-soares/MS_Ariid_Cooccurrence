@@ -95,7 +95,4 @@ env<-env[,-1]
 library(geosphere)
 distlin<-distm(env[,1:2])/1000
 library(vegan)
-rd<-rda(decostand(env,method="standardize")~distlin)
-plot(rd)
 mantel(distlin,vegdist(decostand(env,method="standardize"),method="euclidean"))
-adonis(vegdist(decostand(env,method="standardize"),method="euclidean")~distlin)
