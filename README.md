@@ -1,7 +1,10 @@
-# Data analysis for the manuscript: "Environmental conditions promote local segregation of catfishes in the Amazonian estuary, but ecomorphological differences may allow aggregation"
+# Data analysis for the manuscript: "Environmental conditions promote local segregation, but functional distinctiveness allow aggregation of catfishes in the Amazonian estuary"
 
 ## Authors
 Bruno E. Soares, Naraiana L. Benone, Ronaldo B. Barthem, Alexandre P. Marceniuk and Luciano F. A. Montag
+
+## Published in
+--- not yet published ---
 
 ## Description
 Data and script to analyze the local co-occurrence patterns of ariids in the Amazonian estuary. These results are discussed in the manuscript "Environmental conditions promote local segregation of catfishes in the Amazonian estuary, but ecomorphological differences may allow aggregation", in preparation.
