@@ -6,7 +6,7 @@ Bruno E. Soares, Naraiana L. Benone, Ronaldo B. Barthem, Alexandre P. Marceniuk 
 ## Published in
 --- not yet published ---
 
-## To cite this code/data
+## To cite this data
 --- not yet published ---
 
 *But see/cite D'Amen et al. (2018) to coding to C-score analyses, null modelling and Blois framework.
