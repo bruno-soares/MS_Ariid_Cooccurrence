@@ -6,8 +6,10 @@ Bruno E. Soares, Naraiana L. Benone, Ronaldo B. Barthem, Alexandre P. Marceniuk 
 ## Published in
 --- not yet published ---
 
-## To cite this code and/or data
+## To cite this code/data
 --- not yet published ---
+
+*But see/cite D'Amen et al. (2018) to the original coding to C-score analyses, null modelling and Blois framework.
 
 ## Description
 Data and script to analyze the local co-occurrence patterns of ariids in the Amazonian estuary. These results are discussed in the manuscript "Environmental conditions promote local segregation of catfishes in the Amazonian estuary, but ecomorphological differences may allow aggregation", in preparation.
@@ -36,3 +38,6 @@ Data encompasses the ecomorphological description of nine marine catfishes of th
 
 ## Contact information
 Please, feel free to contact me in my personal e-mail: soares.e.bruno@gmail.com.
+
+## References
+D'Amen, M; Mod, H. K.; Gotelli, N. J.; Guisan, A. 2018. Disentangling biotic interactions, environmental filters, and dispersal limitation as drivers of species co‐occurrence. Ecography, 41 (8): 1233-1244. doi: https://doi.org/10.1111/ecog.03148
