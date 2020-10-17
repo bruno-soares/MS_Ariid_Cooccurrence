@@ -6,8 +6,11 @@ library(vegan)
 
 # Importing the dataset #
 trawlings<-read.table("data/trawling data.txt",header=T)
+avg_salinity<-read.table("data/avg. salinity.txt",header=T)
+trawlings<-merge(trawlings,avg_salinity)
 
 # Renaming species for further plotting #
+trawlings$species<-as.factor(trawlings$species)
 levels(trawlings$species)[1]<-"Aph"
 levels(trawlings$species)[2]<-"Aqu"
 levels(trawlings$species)[3]<-"Aru"
@@ -21,6 +24,7 @@ levels(trawlings$species)[9]<-"Spr"
 # Average differences in sites that each species occurred #
 anova(lm(log(trawlings$prof)~trawlings$species)) # significant p-value
 anova(lm(log(trawlings$sal)~trawlings$species)) # significant p-value
+anova(lm(log(trawlings$sal_avg)~trawlings$species)) # significant p-value
 anova(lm(log(trawlings$temp)~trawlings$species)) # non-significant p-value
 
 # Plotting Figure 3 #
@@ -42,7 +46,7 @@ Depth<-ggplot()+
         legend.text = element_text(face = "bold", colour = "black", size = 16))
 
 Salinity<-ggplot()+
-  geom_boxplot(aes(x=trawlings$species,y=trawlings$sal),
+  geom_boxplot(aes(x=trawlings$species,y=trawlings$sal_avg),
                notch=TRUE,fill="grey")+
   ylab("Salinity")+
   theme(panel.background = element_rect(fill = "white", colour = "black", size = 0.5), # opcoes graficas
@@ -74,7 +78,7 @@ figure3<-grid.arrange(Depth,Salinity,Temperature,nrow=3)
 ggsave("Figures/Figure 3.png",figure3,dpi=600,height=24,width=16,units=c("cm"))
 
 # PCA for environmental variables #
-env<-aggregate(trawlings[,7:9],list(trawlings$trawl),mean)
+env<-aggregate(trawlings[,c(7,9,11)],list(trawlings$trawl),mean)
 row.names(env)<-env$Group.1
 env<-env[,-1]
 pc.env<-princomp(decostand(env,method="standardize"),cor=TRUE)
