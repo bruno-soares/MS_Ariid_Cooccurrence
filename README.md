@@ -8,7 +8,8 @@ Bruno E. Soares, Naraiana L. Benone, Ronaldo B. Barthem, Alexandre P. Marceniuk 
 
 ## To cite this code/data
 --- not yet published ---
-But see/cite D'Amen et al. (2018) to the original coding to C-score analyses, null modelling and Blois framework.
+
+*But see/cite D'Amen et al. (2018) to the original coding to C-score analyses, null modelling and Blois framework.
 
 ## Description
 Data and script to analyze the local co-occurrence patterns of ariids in the Amazonian estuary. These results are discussed in the manuscript "Environmental conditions promote local segregation of catfishes in the Amazonian estuary, but ecomorphological differences may allow aggregation", in preparation.
