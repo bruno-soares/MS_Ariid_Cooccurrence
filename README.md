@@ -4,10 +4,11 @@
 Bruno E. Soares, Naraiana L. Benone, Ronaldo B. Barthem, Alexandre P. Marceniuk and Luciano F. A. Montag
 
 ## Published in
---- not yet published ---
+Preprint available in EvoEvoRxiv: https://doi.org/10.32942/osf.io/nmyxt
+Submitted to Estuarine, Coastal and Shelf Science
 
 ## To cite this data
---- not yet published ---
+Data and coding* available in Zenodo: https://zenodo.org/record/4118631
 
 *But see/cite D'Amen et al. (2018) to the coding of C-score analyses, null modelling and Blois framework.
 
