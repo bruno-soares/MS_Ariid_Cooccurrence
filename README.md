@@ -5,7 +5,7 @@ Bruno E. Soares, Naraiana L. Benone, Ronaldo B. Barthem, Alexandre P. Marceniuk 
 
 ## Published in
 Preprint available in EvoEvoRxiv: https://doi.org/10.32942/osf.io/nmyxt
-Submitted to Estuarine, Coastal and Shelf Science
+Published at Estuarine, Coastal, and Shelf Science 251: https://doi.org/10.1016/j.ecss.2021.107256
 
 ## To cite this data
 Data and coding* available in Zenodo: https://zenodo.org/record/4118631
