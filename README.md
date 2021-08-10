@@ -12,7 +12,7 @@ Data and coding* available in Zenodo: https://zenodo.org/record/4118631
 *But see/cite D'Amen et al. (2018) to the coding of C-score analyses, null modelling and Blois framework.
 
 ## Description
-Data and script to analyze the local co-occurrence patterns of ariids in the Amazonian estuary. These results are discussed in the manuscript "Environmental conditions promote local segregation of catfishes in the Amazonian estuary, but ecomorphological differences may allow aggregation", in preparation.
+Data and script to analyze the local co-occurrence patterns of ariids in the Amazonian estuary. These results are discussed in the manuscript "Environmental conditions promote local segregation of catfishes in the Amazonian estuary, but ecomorphological differences may allow aggregation", published at Estuariane, Coastal, and Shelf Science (see above).
 
 ## How to use this directory
 In R, you may download all the data contained in this repository by using the download.file() function, then use the function unzip(). Example:
